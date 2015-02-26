@@ -1,0 +1,59 @@
+ {
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"name": "Cookbook",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["name", "description"],
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "Name of the Cookbook."
+		},
+		"type": {
+			"type": "string",
+			"description": "Defaults to cookbook."				
+		},
+		"description": {
+			"type": "string",
+			"description": "Short description of Cookbook."
+		},
+		"version": {
+			"type": "string",
+			"description": "Cookbook version"
+		},
+		"authors": {
+			"type": "array",
+			"description": "List of authors that contributed to the Cookbook.",
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": ["name"],
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Full name of the author."
+					},
+					"email": {
+						"type": "string",
+						"description": "Email address of the author.",
+						"format": "email"
+					},
+					"role": {
+						"type": "string",
+						"description": "Author's role in the project."
+					}
+				}
+			}
+		},
+		"recipes": {
+			"type": "object",
+			"description": "The required recipes for this Cookbook",
+			"additionalProperties": true
+		},
+		"libraries": {
+			"type": ["object", "array"],
+			"description": "A set of additional repositories where recipes can be found.",
+			"additionalProperties": true
+		}
+	}
+}

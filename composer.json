@@ -1,0 +1,41 @@
+{
+	"name": "culinaire/culinaire",
+	"description": "Culinaire will help declare and compile culinary cookbooks, using PHP.",
+	"keywords": ["package", "dependency", "culinary"],
+	"homepage": "http://culinaire.github.io/Culinaire",
+	"type": "library",
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Frank McCoy",
+			"email": "frankmccoy.d@gmail.com",
+			"homepage": "https://github.com/fmccoy"
+		}
+	],
+	"support": {
+		"wiki":   "https://github.com/Culinaire/Culinaire/wiki",
+		"issues": "https://github.com/Culinaire/Culinaire/issues",
+		"source": "https://github.com/Culinaire/Culinaire"
+	},
+	"require": {
+		"php": ">=5.3.2",
+		"justinrainbow/json-schema": "~1.3",
+		"symfony/console": "~2.5",
+		"symfony/finder": "~2.2",
+		"symfony/process": "~2.1",
+		"herrera-io/phar-update": "1.*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.5"
+	},
+	"autoload": {
+		"psr-0": { "Culinaire": "src/" }
+	},
+	"autoload-dev": {
+		"psr-0": { "Culinaire\\Test": "tests/" }
+	},
+	"bin": ["bin/culinaire"],
+	"scripts": {
+		"test": "phpunit"
+	}
+}

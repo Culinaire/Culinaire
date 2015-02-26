@@ -2,10 +2,13 @@
 .DS_Store
 .localized
 
+# Sublime
+*.sublime-workspace
+
 # Composer
 composer.phar
 vendor/
-# composer.lock
+composer.lock
 
 # Box-Project
 box.phar

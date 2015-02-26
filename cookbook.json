@@ -1,0 +1,16 @@
+{
+	"name": "default",
+	"type": "cookbook",
+	"description": "A sample cookbook file.",
+	"version": "0.0.1",
+	"authors": [
+		{
+			"name": "Frank McCoy",
+			"email": "frankmccoy.d@gmail.com",
+			"role": "editor"
+		}
+	],
+	"recipes": {
+		"apps/bruschetta": "0.1.0"
+	}
+}
