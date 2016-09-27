@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
+})->name('home');
+
+Route::get('features', function () {
+    return view('front.features');
+});
+
+Route::group(['prefix'=>'admin'], function() {
+  Route::get('/', function () {
+    return view('admin.index');
+  });
 });
