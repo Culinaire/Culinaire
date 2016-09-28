@@ -19,9 +19,16 @@ Route::get('features', function () {
     return view('front.features');
 });
 
+Route::get('test', function (Bistro\Recipes\RecipeFactory $recipes) {
+  dd($recipes);
+});
+
 Route::group(['prefix'=>'admin'], function() {
   Route::get('/', function () {
     return view('admin.index');
   });
+
   Route::resource('recipes', '\Bistro\Recipes\Controllers\RecipesController');
+  Route::resource('products', '\Bistro\Products\Controllers\ProductsController');
+
 });

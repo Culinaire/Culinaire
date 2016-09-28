@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Bistro\Recipes\RecipeServiceProvider::class,
+        Bistro\Products\ProductServiceProvider::class,
 
     ],
 
