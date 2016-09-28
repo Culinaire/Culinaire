@@ -12,7 +12,7 @@
     @foreach($products as $product)
       <tr>
         <td>{{ $product->plu }}</td>
-        <td>{{ $product->description }}</td>
+        <td><a href="{{ route('products.show', ['id'=> $product->id]) }}">{{ $product->description }}</a></td>
         <td>{{ $product->purchase_price }}</td>
         <td>{{ $product->pack_qty }} / {{ $product->pack_size }} {{ $product->pack_uom }}</td>
         <td>{{ $product->unit_price }}</td>
