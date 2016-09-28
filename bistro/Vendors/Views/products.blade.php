@@ -6,7 +6,6 @@
     <th>Purchase Price</th>
     <th>Pack</th>
     <th>Unit Price</th>
-    <th>Vendor</th>
   </thead>
   
   <tbody>
@@ -17,9 +16,10 @@
         <td>{{ $product->purchase_price }}</td>
         <td>{{ $product->pack_qty }} / {{ $product->pack_size }} {{ $product->pack_uom }}</td>
         <td>{{ $product->unit_price }}</td>
-        <td>{{ $product->vendor->name }}</td>
       </tr>
     @endforeach
   </tbody>
 
 </table>
+
+<?php print_r($products); ?>

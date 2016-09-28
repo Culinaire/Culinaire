@@ -13,4 +13,9 @@ class Product extends Model
     $value = $this->purchase_price / $this->pack_size;
     return $value;
   }
+
+  public function vendor()
+  {
+    return $this->belongsTo('Bistro\Vendors\Models\Vendor');
+  }
 }

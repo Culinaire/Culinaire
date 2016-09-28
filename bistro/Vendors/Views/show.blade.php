@@ -6,3 +6,9 @@
     </div>
   </h1>
 </div>
+
+@include('bistro/vendors::products', ['products' => $vendor->products ])
+
+<pre>
+  <?php print_r($vendor->products); ?>
+</pre>
