@@ -1,10 +1,10 @@
 <?php
 
-namespace Bistro\Recipes\Providers;
+namespace Bistro\Products\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class RecipeServiceProvider extends ServiceProvider
+class ProductServiceProvider extends ServiceProvider
 {
   /**
    * Bootstrap any application services.
@@ -17,7 +17,7 @@ class RecipeServiceProvider extends ServiceProvider
     $this->loadMigrationsFrom(__DIR__.'/../Migrations');
 
     //  Views
-    $this->loadViewsFrom(__DIR__.'/../Views', 'bistro/recipes');
+    $this->loadViewsFrom(__DIR__.'/../Views', 'bistro/products');
   }
 
   /**
@@ -27,6 +27,7 @@ class RecipeServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->make('Bistro\Recipes\Controllers\RecipesController');
+    $this->app->alias('product', 'Bistro\Products\ProductFactory');
+    $this->app->make('Bistro\Products\Controllers\ProductsController');
   }
 }

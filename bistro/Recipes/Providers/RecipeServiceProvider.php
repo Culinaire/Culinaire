@@ -7,10 +7,10 @@ use Illuminate\Support\ServiceProvider;
 class RecipeServiceProvider extends ServiceProvider
 {
   /**
-   * Bootstrap any application services.
-   *
-   * @return void
-   */
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
   public function boot()
   {
     //  Migrations
@@ -20,13 +20,13 @@ class RecipeServiceProvider extends ServiceProvider
     $this->loadViewsFrom(__DIR__.'/../Views', 'bistro/recipes');
   }
 
-  /**
-   * Register any application services.
-   *
-   * @return void
-   */
-  public function register()
-  {
-    $this->app->make('Bistro\Recipes\Controllers\RecipesController');
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+      $this->app->make('Bistro\Recipes\Controllers\RecipesController');
+    }
   }
-}

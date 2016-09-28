@@ -1,10 +1,10 @@
 <?php
 
-namespace Bistro\Recipes\Providers;
+namespace Bistro\Vendors\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class RecipeServiceProvider extends ServiceProvider
+class VendorServiceProvider extends ServiceProvider
 {
   /**
    * Bootstrap any application services.
@@ -13,11 +13,16 @@ class RecipeServiceProvider extends ServiceProvider
    */
   public function boot()
   {
+    //  Routes
+    if (! $this->app->routesAreCached()) {
+        require __DIR__.'/../routes.php';
+    }
+
     //  Migrations
     $this->loadMigrationsFrom(__DIR__.'/../Migrations');
 
     //  Views
-    $this->loadViewsFrom(__DIR__.'/../Views', 'bistro/recipes');
+    $this->loadViewsFrom(__DIR__.'/../Views', 'bistro/vendors');
   }
 
   /**
@@ -27,6 +32,7 @@ class RecipeServiceProvider extends ServiceProvider
    */
   public function register()
   {
-    $this->app->make('Bistro\Recipes\Controllers\RecipesController');
+    //$this->app->alias();
+    $this->app->make('Bistro\Vendors\Controllers\VendorsController');
   }
 }

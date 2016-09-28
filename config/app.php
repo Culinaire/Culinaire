@@ -178,8 +178,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Bistro\Recipes\RecipeServiceProvider::class,
-        Bistro\Products\ProductServiceProvider::class,
+        Bistro\Recipes\Providers\RecipeServiceProvider::class,
+        Bistro\Products\Providers\ProductServiceProvider::class,
+        Bistro\Vendors\Providers\VendorServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
 
