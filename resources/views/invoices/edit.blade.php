@@ -13,9 +13,9 @@
 
     {{-- Merchant --}}
     <div class="form-group">
-      {!! Form::label('invoice_number', 'Merchant', ['class'=>'col-sm-2 control-label']) !!}
+      {!! Form::label('merchant', 'Merchant', ['class'=>'col-sm-2 control-label']) !!}
       <div class="col-sm-6">
-        {!! Form::select('merchant', ['undefined'], $invoice->merchant,['class'=> 'form-control']) !!}
+        {!! Form::select('merchant', App\Bistro\Merchants\Models\Merchant::pluck('name', 'id'), $invoice->merchant,['class'=> 'form-control']) !!}
       </div>
     </div>
 

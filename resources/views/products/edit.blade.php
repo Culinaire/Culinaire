@@ -39,7 +39,7 @@
   <div class="form-group">
     {!! Form::label('merchant_id', title_case('merchant'), ['class'=>'col-sm-2 control-label']) !!}
     <div class="col-sm-6">
-      {!! Form::text('merchant_id', $product->merchant_id, ['class'=> 'form-control']) !!}
+      {!! Form::select('merchant_id', App\Bistro\Merchants\Models\Merchant::pluck('name', 'id'), $product->merchant_id,['class'=> 'form-control']) !!}
     </div>
   </div>
 
