@@ -15,7 +15,7 @@ class InvoiceController extends Controller
   */
   public function index()
   {
-    $invoices = Invoice::all();
+    $invoices = Invoice::all()->sortByDesc('invoice_date');
     return view('invoices.browse')->with('invoices', $invoices);
   }
 
