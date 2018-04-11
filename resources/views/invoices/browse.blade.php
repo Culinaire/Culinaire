@@ -1,28 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-  <table id="browse-invoices" class="table">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-2 pull-right">
+            <a class="btn btn-primary btn-block" href="{{ route('invoices.create') }}"><span class="glyphicon glyphicon-plus"></span> Invoice</a>
+          </div>
+          <div class="col-xs-10">
+            <h3 class="panel-title">Invoices</h3>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <thead>
-      <th>Invoice Number</th>
-      <th>Merchant</th>
-      <th>Date</th>
-      <th>Total</th>
-    </thead>
+    @include('invoices.table')
 
-    <tbody>
-      @foreach ($invoices as $invoice)
-        <tr>
-          <td>{{ $invoice->invoice_number }}</td>
-          <td>{{ $invoice->merchant }}</td>
-          <td>{{ $invoice->invoice_date->toDateString() }}</td>
-          <td>{{ $invoice->invoice_total }}</td>
-        </tr>
-      @endforeach
-    </tbody>
-
-  </table>
-
-
-
+  </div>
 @endsection
