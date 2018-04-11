@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('invoices', '\App\Bistro\Invoices\Controllers\InvoiceController');
+Route::resource('merchants', '\App\Bistro\Merchants\Controllers\MerchantController');
 Route::get('/home', 'HomeController@index')->name('home');

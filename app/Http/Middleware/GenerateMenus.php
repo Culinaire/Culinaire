@@ -19,7 +19,7 @@ class GenerateMenus
     Menu::make('primarynav', function ($menu) {
       $menu->add('Home');
       $menu->add('Invoices', 'invoices');
-      $menu->add('Services', 'services');
+      $menu->add('Merchants', 'merchants');
       $menu->add('Contact', 'contact');
     });
     return $next($request);
