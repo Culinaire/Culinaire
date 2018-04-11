@@ -20,7 +20,7 @@ class GenerateMenus
       $menu->add('Home');
       $menu->add('Invoices', 'invoices');
       $menu->add('Merchants', 'merchants');
-      $menu->add('Contact', 'contact');
+      $menu->add('Products', 'products');
     });
     return $next($request);
   }

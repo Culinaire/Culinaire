@@ -12,3 +12,14 @@
 body {
   padding-top: 50px;
 }
+
+.panel-title {
+  line-height: 36px;
+  font-size: 24px;
+  color: lighten($brand-primary, 80%);
+  font-weight: 700;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}

@@ -1513,7 +1513,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Oswald", inherit;
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -7117,7 +7117,7 @@ button.list-group-item-danger.active:focus {
 
 .panel-default > .panel-heading {
   color: #333333;
-  background-color: #fff;
+  background-color: #184c6a;
   border-color: #d3e0e9;
 }
 
@@ -7126,7 +7126,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-default > .panel-heading .badge {
-  color: #fff;
+  color: #184c6a;
   background-color: #333333;
 }
 
@@ -8352,5 +8352,16 @@ button.close {
 
 body {
   padding-top: 50px;
+}
+
+.panel-title {
+  line-height: 36px;
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
 

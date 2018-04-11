@@ -22,7 +22,7 @@ $font-family-sans-serif: "Open Sans", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
-$headings-font-family: "Oswald", inherit;
+$headings-font-family: "Oswald", sans-serif;
 
 // Navbar
 $navbar-default-bg: #fff;
@@ -36,4 +36,4 @@ $input-border-focus: lighten($brand-primary, 25%);
 $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
-$panel-default-heading-bg: #fff;
+$panel-default-heading-bg: darken($brand-primary, 25%);
