@@ -86,12 +86,20 @@ class InvoiceController extends Controller
   public function update(Request $request, $id)
   {
     $input = $request->all();
-    $v = Invoice::validate($input);
-    if($v) {
-      Invoice::find($input);
+
+    $inv = Invoice::find($id);
+
+    $inv->validate($input);
+
+    if($inv) {
+      $inv->invoice_number = $request->input('invoice_number');
+      $inv->invoice_date = $request->input('invoice_date');
+      $inv->merchant = $request->input('merchant');
+      $inv->invoice_total = $request->input('invoice_total');
+      $inv->save();
     }
 
-    return redirect('invoices.index')->flash('status', 'Invoice updated successfully!');
+    return redirect()->route('invoices.index')->with('status', 'Invoice updated successfully!');
   }
 
   /**
@@ -102,6 +110,7 @@ class InvoiceController extends Controller
   */
   public function destroy($id)
   {
-    //
+    $inv = Invoice::find($id);
+    $inv->delete();
   }
 }
