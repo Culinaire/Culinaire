@@ -2,11 +2,11 @@
 
 namespace App\Bistro\Invoices\Controllers;
 
-use App\Bistro\Invoices\Models\Invoice;
+use App\Bistro\Invoices\Models\InvoiceItem;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class InvoiceController extends Controller
+class InvoiceItemController extends Controller
 {
   /**
   * Display a listing of the resource.
@@ -15,8 +15,8 @@ class InvoiceController extends Controller
   */
   public function index()
   {
-    $invoices = Invoice::all();
-    return view('invoices.browse')->with('invoices', $invoices);
+    $items = InvoiceItem::all();
+    return view('invoice-items.browse')->with('items', $items);
   }
 
   /**
@@ -26,7 +26,7 @@ class InvoiceController extends Controller
   */
   public function create()
   {
-    return view('invoices.create');
+    return view('invoice-items.create');
   }
 
   /**
@@ -39,13 +39,18 @@ class InvoiceController extends Controller
   {
     $input = $request->all();
 
-    $inv = new Invoice();
+    $inv = new InvoiceItem();
     $inv->validate($input);
     if($inv) {
       $inv->invoice_number = $request->input('invoice_number');
-      $inv->invoice_date = $request->input('invoice_date');
-      $inv->merchant_id = $request->input('merchant_id');
-      $inv->invoice_total = $request->input('invoice_total');
+      $inv->plu = $request->input('plu');
+      $inv->description = $request->input('description');
+      $inv->purchase_price = $request->input('purchase_price');
+      $inv->purchase_qty = $request->input('purchase_qty');
+      $inv->purchase_uom = $request->input('purchase_uom');
+      $inv->ordered_qty = $request->input('ordered_qty');
+      $inv->shipped_qty = $request->input('shipped_qty');
+      $inv->sequence = $request->input('sequence');
       $inv->save();
     }
 
@@ -60,8 +65,7 @@ class InvoiceController extends Controller
   */
   public function show($id)
   {
-    $invoice = Invoice::find($id);
-    //dd($invoice->items());
+    $invoice = InvoiceItem::find($id);
     return view('invoices.show')->with('invoice', $invoice);
   }
 
@@ -73,7 +77,7 @@ class InvoiceController extends Controller
   */
   public function edit($id)
   {
-    $invoice = Invoice::find($id);
+    $invoice = InvoiceItem::find($id);
     return view('invoices.edit')->with('invoice', $invoice);
   }
 
@@ -88,14 +92,14 @@ class InvoiceController extends Controller
   {
     $input = $request->all();
 
-    $inv = Invoice::find($id);
+    $inv = InvoiceItem::find($id);
 
     $inv->validate($input);
 
     if($inv) {
       $inv->invoice_number = $request->input('invoice_number');
       $inv->invoice_date = $request->input('invoice_date');
-      $inv->merchant_id = $request->input('merchant_id');
+      $inv->merchant = $request->input('merchant');
       $inv->invoice_total = $request->input('invoice_total');
       $inv->save();
     }
@@ -111,7 +115,7 @@ class InvoiceController extends Controller
   */
   public function destroy($id)
   {
-    $inv = Invoice::find($id);
+    $inv = InvoiceItem::find($id);
     $inv->delete();
   }
 }

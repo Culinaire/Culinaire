@@ -13,9 +13,9 @@
 
     {{-- Merchant --}}
     <div class="form-group">
-      {!! Form::label('merchant', 'Merchant', ['class'=>'col-sm-2 control-label']) !!}
+      {!! Form::label('merchant_id', 'Merchant', ['class'=>'col-sm-2 control-label']) !!}
       <div class="col-sm-6">
-        {!! Form::select('merchant', App\Bistro\Merchants\Models\Merchant::pluck('name', 'id'), old('merchant'),['class'=> 'form-control']) !!}
+        {!! Form::select('merchant_id', App\Bistro\Merchants\Models\Merchant::pluck('name', 'id'), old('merchant'),['class'=> 'form-control']) !!}
       </div>
     </div>
 

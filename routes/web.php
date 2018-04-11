@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('invoices', '\App\Bistro\Invoices\Controllers\InvoiceController');
+Route::resource('invoice-items', '\App\Bistro\Invoices\Controllers\InvoiceItemController');
+
 Route::resource('merchants', '\App\Bistro\Merchants\Controllers\MerchantController');
 Route::resource('products', '\App\Bistro\Products\Controllers\ProductController');
 

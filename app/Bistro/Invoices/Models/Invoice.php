@@ -11,4 +11,15 @@ class Invoice extends Elegant
     'created_at',
     'updated_at'
   ];
+
+  // Relationships
+  public function items()
+  {
+    return $this->hasMany('App\Bistro\Invoices\Models\InvoiceItem', 'invoice_number', 'invoice_number');
+  }
+
+  public function merchant()
+  {
+    return $this->belongsTo('App\Bistro\Merchants\Models\Merchant');
+  }
 }

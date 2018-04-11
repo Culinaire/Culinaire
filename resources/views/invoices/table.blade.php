@@ -4,6 +4,7 @@
     <th class="text-center">Invoice Number</th>
     <th class="text-left">Merchant</th>
     <th class="text-center">Date</th>
+    <th class="text-center">Items</th>
     <th class="text-center">Total</th>
     <th class="text-center">Actions</th>
   </thead>
@@ -12,8 +13,9 @@
     @foreach ($invoices as $invoice)
       <tr>
         <td class="text-center">{{ $invoice->invoice_number }}</td>
-        <td class="text-left">{{ $invoice->merchant }}</td>
+        <td class="text-left">{{ $invoice->merchant['name'] }}</td>
         <td class="text-center">{{ $invoice->invoice_date->toDateString() }}</td>
+        <td class="text-center">{{ $invoice->items->count() }}</td>
         <td class="text-right">{{ $invoice->invoice_total }}</td>
         <td class="text-center">
 
