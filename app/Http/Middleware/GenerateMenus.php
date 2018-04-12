@@ -21,6 +21,7 @@ class GenerateMenus
       $menu->add('Invoices', 'invoices');
       $menu->add('Merchants', 'merchants');
       $menu->add('Products', 'products');
+      $menu->add('Concepts', 'concepts');
     });
 
     Menu::make('sidebarnav', function ($menu) {});

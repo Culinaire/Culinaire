@@ -21,6 +21,8 @@ Route::group(['middleware'=>'auth'], function () {
   Route::resource('invoices', '\App\Bistro\Invoices\Controllers\InvoiceController');
   Route::resource('invoice-items', '\App\Bistro\Invoices\Controllers\InvoiceItemController');
 
+  Route::resource('concepts', '\App\Bistro\Concepts\Controllers\ConceptController');
+
   Route::resource('merchants', '\App\Bistro\Merchants\Controllers\MerchantController');
   Route::resource('products', '\App\Bistro\Products\Controllers\ProductController');
 });

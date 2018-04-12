@@ -19,6 +19,7 @@ class CreateInvoicesTable extends Migration
             $table->integer('merchant_id')->unsigned();
             $table->string('invoice_total');
             $table->timestamp('invoice_date');
+            $table->integer('concept_id')->unsigned()->default(0);
             $table->timestamps();
         });
     }
