@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <link rel="icon" href="{{ asset('favicon.ico') }}">
   @stack('head')
-  <title>Starter Template for Bootstrap</title>
+  <title>{{ $title or config('app.name') }}</title>
 
   <!-- App Core CSS -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
